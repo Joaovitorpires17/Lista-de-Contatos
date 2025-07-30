@@ -109,6 +109,6 @@ GET /api/contacts/:id: Obtém um contato específico.
 
 PUT /api/contacts/:id: Atualiza um contato específico. (Requer JSON no corpo da requisição)
 
-PATCH /api/contacts/:id/favorite: Alterna o status de favorito de um contato.
+POST /api/contacts/:id/favorite: Alterna o status de favorito de um contato.
 
 DELETE /api/contacts/:id: Deleta um contato específico.

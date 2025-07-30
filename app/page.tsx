@@ -65,7 +65,7 @@ export default function Home() {
   async function toggleFavorite(id: number, current: boolean) {
     try {
       const res = await fetch(`/api/contacts/${id}/favorite`, {
-        method: 'PATCH',
+        method: 'POST',
       });
       if (!res.ok) throw new Error('Falha ao atualizar favorito');
       toast.success(current ? 'Removido dos favoritos' : 'Favoritado!');

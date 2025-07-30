@@ -1,7 +1,7 @@
 // app/api/contacts/[id]/favorite/route.ts
 // Este arquivo gerencia as requisições para a rota /api/contacts/{id}/favorite.
 // Função:
-// - PATCH: Alterna o status 'favorite' de um contato específico pelo ID.
+// - POST: Alterna o status 'favorite' de um contato específico pelo ID.
 
 
 import { NextResponse } from 'next/server';
@@ -13,7 +13,7 @@ interface RouteParams {
   };
 }
 
-export async function PATCH(
+export async function POST(
   request: Request,
   { params }: RouteParams
 ) {
