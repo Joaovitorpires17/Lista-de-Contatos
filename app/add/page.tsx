@@ -12,6 +12,13 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 
 import { PlusCircle, ArrowLeft, User, Mail, Phone, Calendar, Image as ImageIcon, PersonStanding as GenderIcon } from 'lucide-react';
 
+
+type ErrorModel= {
+  path?: string;
+  message: string;
+};
+
+
 function validateAndFormatPhoneFrontend(phoneInput: string): { formattedPhone?: string; error?: string } {
   if (!phoneInput) {
     return { error: "Telefone é obrigatório." };
@@ -137,11 +144,11 @@ export default function AddContactPage() {
         const errorData = await res.json();
         const errorMessage = errorData.message || 'Erro ao adicionar contato';
         if (errorData.errors && errorData.errors.length > 0) {
-          const phoneBackendError = errorData.errors.find((err: any) => err.path && err.path.includes('phone'));
+          const phoneBackendError = errorData.errors.find((err: ErrorModel) => err.path?.includes('phone'));
           if (phoneBackendError) {
             setPhoneError(phoneBackendError.message);
           }
-          const emailBackendError = errorData.errors.find((err: any) => err.path && err.path.includes('email'));
+          const emailBackendError = errorData.errors.find((err: ErrorModel) => err.path?.includes('email'));
           if (emailBackendError) {
             setEmailError(emailBackendError.message);
           }

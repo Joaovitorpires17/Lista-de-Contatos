@@ -12,6 +12,11 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 
 import { Save, ArrowLeft, User, Mail, Phone, Calendar, Image as ImageIcon, PersonStanding as GenderIcon, Trash } from 'lucide-react';
 
+type ErrorModel= {
+  path?: string;
+  message: string;
+};
+
 interface Contact {
   id: number;
   name: string;
@@ -198,11 +203,11 @@ export default function EditContactPage() {
         const errorData = await res.json();
         const errorMessage = errorData.message || 'Erro ao atualizar contato';
         if (errorData.errors && errorData.errors.length > 0) {
-          const phoneBackendError = errorData.errors.find((err: any) => err.path && err.path.includes('phone'));
+          const phoneBackendError = errorData.errors.find((err: ErrorModel) => err.path?.includes('phone'));
           if (phoneBackendError) {
             setPhoneError(phoneBackendError.message);
           }
-          const emailBackendError = errorData.errors.find((err: any) => err.path && err.path.includes('email'));
+          const emailBackendError = errorData.errors.find((err: ErrorModel) => err.path?.includes('email'));
           if (emailBackendError) {
             setEmailError(emailBackendError.message);
           }
