@@ -32,6 +32,7 @@ function validateAndFormatPhone(phoneInput: string): { formattedPhone?: string; 
 export async function POST(request: Request) {
   try {
     const body = await request.json();
+    /* eslint-disable prefer-const */
     let { name, email, phone, gender, dateOfBirth, profilePictureUrl } = body;
 
     const errors: { name?: string; email?: string; phone?: string; gender?: string; dateOfBirth?: string; profilePictureUrl?: string } = {};

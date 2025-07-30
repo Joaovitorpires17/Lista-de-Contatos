@@ -76,7 +76,7 @@ export async function PUT(
     }
 
     const body = await request.json();
-    let { name, email, phone, gender, dateOfBirth, profilePictureUrl } = body;
+    const { name, email, phone, gender, dateOfBirth, profilePictureUrl } = body;
 
     const errors: { name?: string; email?: string; phone?: string; gender?: string; dateOfBirth?: string; profilePictureUrl?: string } = {};
 

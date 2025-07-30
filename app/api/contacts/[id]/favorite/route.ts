@@ -19,7 +19,7 @@ export async function PATCH(
 ) {
   try {
     const resolvedParams = await Promise.resolve(params);
-    let contactIdFromUrl = resolvedParams.id;
+    const contactIdFromUrl = resolvedParams.id;
 
     if (!contactIdFromUrl) {
       return NextResponse.json({ message: 'ID do contato não fornecido na URL.' }, { status: 400 });
