@@ -56,16 +56,9 @@ yarn install
 
 # Configure o Banco de Dados (Prisma):
 
-Execute as migrações do Prisma para criar o banco de dados e as tabelas:
-
-npx prisma migrate dev --name init
-
-Este comando criará o arquivo dev.db na pasta prisma e aplicará o esquema do seu banco de dados.
-
 Para garantir que o Prisma Client esteja gerado e pronto para uso:
 
 npx prisma generate
-
 
 
 
