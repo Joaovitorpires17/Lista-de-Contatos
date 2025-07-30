@@ -6,28 +6,20 @@
 
 import { NextResponse } from 'next/server';
 import { prisma } from '@/prisma/lib/prisma';
-
-interface RouteParams {
-  params: {
-    id: string;
-  };
-}
+import type { NextRequest } from 'next/server';
 
 export async function POST(
-  request: Request,
-  { params }: RouteParams
+  request: NextRequest,
+  context: { params: { id: string } }
 ) {
   try {
-    const resolvedParams = await Promise.resolve(params);
-    const contactIdFromUrl = resolvedParams.id;
+    const contactIdFromUrl = context.params.id;
 
     if (!contactIdFromUrl) {
       return NextResponse.json({ message: 'ID do contato não fornecido na URL.' }, { status: 400 });
     }
 
-
     const contactId = Number(contactIdFromUrl);
-
 
     if (isNaN(contactId)) {
       return NextResponse.json({ message: 'ID do contato inválido (não é um número).' }, { status: 400 });
@@ -54,7 +46,7 @@ export async function POST(
   } catch (error) {
     console.error("Erro ao favoritar/desfavoritar contato:", error);
     return NextResponse.json(
-      { message: 'Ocorreu um erro interno do servidor ao tentar atualizar o status de favorito.' },
+      { message: 'Erro interno ao tentar atualizar o status de favorito.' },
       { status: 500 }
     );
   }
