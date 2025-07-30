@@ -56,13 +56,7 @@ yarn install
 
 # Configure o Banco de Dados (Prisma):
 
-Crie um arquivo .env na raiz do projeto(Caso o mesmo já exista apenas adicione a linha abaixo) e adicione a seguinte linha:
-
-DATABASE_URL="file:./dev.db"
-
-Este arquivo define a conexão com o seu banco de dados SQLite local.
-
-Em seguida, execute as migrações do Prisma para criar o banco de dados e as tabelas:
+Execute as migrações do Prisma para criar o banco de dados e as tabelas:
 
 npx prisma migrate dev --name init
 
