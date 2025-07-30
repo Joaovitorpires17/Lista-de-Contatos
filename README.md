@@ -1,36 +1,124 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+📝 Lista de Contatos
 
-## Getting Started
+Este é um projeto de aplicação web para gerenciar contatos, permitindo adicionar, visualizar, editar, deletar, marcar como favoritos e pesquisar contatos. Desenvolvido com 
+Next.js (App Router), React, Tailwind CSS e Prisma ORM para interação com um banco de dados SQLite.
 
-First, run the development server:
 
-```bash
+✨ Funcionalidades
+
+Adicionar Contato: Crie novos contatos com nome, e-mail, telefone, gênero, data de nascimento e foto de perfil.
+
+Listar Contatos: Visualize todos os contatos em ordem alfabética.
+
+Visualizar Detalhes: Veja informações completas de um contato específico.
+
+Editar Contato: Atualize as informações de contatos existentes.
+
+Deletar Contato: Remova contatos da lista.
+
+Marcar como Favorito: Sinalize contatos importantes para fácil acesso.
+
+Filtrar Favoritos: Exiba apenas os contatos marcados como favoritos.
+
+Pesquisar Contatos: Encontre contatos rapidamente pelo nome.
+
+Design Responsivo: Interface adaptada para desktop e mobile.
+
+
+
+
+# 🚀 Como Rodar o Projeto Localmente
+
+Siga os passos abaixo para configurar e executar o projeto na sua máquina local.
+
+Pré-requisitos
+Certifique-se de ter as seguintes ferramentas instaladas:
+
+Node.js (versão 18 ou superior)
+
+npm (gerenciador de pacotes do Node.js) ou Yarn
+
+
+
+# Passos para Instalação e Execução
+Clone o Repositório:
+
+git clone https://github.com/seu-usuario/seu-repositorio.git
+cd seu-repositorio
+
+(Lembre-se de substituir seu-usuario/seu-repositorio pelo caminho real do seu repositório no GitHub.)
+
+
+
+# Instale as Dependências:
+
+npm install
+# ou
+yarn install
+
+
+
+# Configure o Banco de Dados (Prisma):
+
+Crie um arquivo .env na raiz do projeto(Caso o mesmo já exista apenas adicione a linha abaixo) e adicione a seguinte linha:
+
+DATABASE_URL="file:./dev.db"
+
+Este arquivo define a conexão com o seu banco de dados SQLite local.
+
+Em seguida, execute as migrações do Prisma para criar o banco de dados e as tabelas:
+
+npx prisma migrate dev --name init
+
+Este comando criará o arquivo dev.db na pasta prisma e aplicará o esquema do seu banco de dados.
+
+Para garantir que o Prisma Client esteja gerado e pronto para uso:
+
+npx prisma generate
+
+
+
+
+# Inicie o Servidor de Desenvolvimento:
+
 npm run dev
-# or
+# ou
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+O projeto estará acessível em http://localhost:3000.
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🗄️ Visualizando o Banco de Dados SQLite
+Se você quiser inspecionar o conteúdo do seu banco de dados SQLite (dev.db), você pode usar o Prisma Studio.
 
-## Deploy on Vercel
+Execute o seguinte comando no terminal:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+npx prisma studio
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Isso abrirá uma interface web no seu navegador (geralmente em http://localhost:5555) onde você poderá visualizar e gerenciar os dados dos seus contatos.
+
+
+
+
+## 🧪 Testando a API com Postman (Opcional)
+Você pode testar os endpoints da API diretamente usando ferramentas como o Postman ou Insomnia. A base da sua API é http://localhost:3000/api/contacts.
+
+GET /api/contacts: Lista todos os contatos.
+
+GET /api/contacts?favorite=true: Lista apenas contatos favoritos.
+
+GET /api/contacts?search=nome: Pesquisa contatos por nome.
+
+POST /api/contacts: Cria um novo contato. (Requer JSON no corpo da requisição)
+
+GET /api/contacts/:id: Obtém um contato específico.
+
+PUT /api/contacts/:id: Atualiza um contato específico. (Requer JSON no corpo da requisição)
+
+PATCH /api/contacts/:id/favorite: Alterna o status de favorito de um contato.
+
+DELETE /api/contacts/:id: Deleta um contato específico.
