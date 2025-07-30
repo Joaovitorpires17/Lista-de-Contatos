@@ -100,7 +100,7 @@ Isso abrirá uma interface web no seu navegador (geralmente em http://localhost:
 
 
 
-## 🧪 Testando a API com Postman (Opcional)
+## 🧪 Testando a API com Postman
 Você pode testar os endpoints da API diretamente usando ferramentas como o Postman ou Insomnia. A base da sua API é http://localhost:3000/api/contacts.
 
 GET /api/contacts: Lista todos os contatos.
