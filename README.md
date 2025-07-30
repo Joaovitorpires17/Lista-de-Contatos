@@ -43,11 +43,7 @@ npm (gerenciador de pacotes do Node.js) ou Yarn
 # Passos para Instalação e Execução
 Clone o Repositório:
 
-git clone https://github.com/seu-usuario/seu-repositorio.git
-cd seu-repositorio
-
-(Lembre-se de substituir seu-usuario/seu-repositorio pelo caminho real do seu repositório no GitHub.)
-
+git clone https://github.com/Joaovitorpires17/Lista-de-Contatos
 
 
 # Instale as Dependências:
