@@ -49,7 +49,7 @@ git clone https://github.com/Joaovitorpires17/Lista-de-Contatos
 # Instale as Dependências:
 
 npm install
-# ou
+## ou
 yarn install
 
 
@@ -78,7 +78,7 @@ npx prisma generate
 # Inicie o Servidor de Desenvolvimento:
 
 npm run dev
-# ou
+## ou
 yarn dev
 
 
