@@ -1,5 +1,7 @@
 📝 Lista de Contatos
 
+🔗 **Acesse o projeto online:** [https://lista-de-contatos-production.up.railway.app/](https://lista-de-contatos-production.up.railway.app/)
+
 Este é um projeto de aplicação web para gerenciar contatos, permitindo adicionar, visualizar, editar, deletar, marcar como favoritos e pesquisar contatos. Desenvolvido com 
 Next.js (App Router), React, Tailwind CSS e Prisma ORM para interação com um banco de dados SQLite.
 
@@ -23,8 +25,6 @@ Filtrar Favoritos: Exiba apenas os contatos marcados como favoritos.
 Pesquisar Contatos: Encontre contatos rapidamente pelo nome.
 
 Design Responsivo: Interface adaptada para desktop e mobile.
-
-
 
 
 # 🚀 Como Rodar o Projeto Localmente
